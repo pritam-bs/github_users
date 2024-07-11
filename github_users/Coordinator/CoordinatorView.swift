@@ -22,7 +22,10 @@ struct CoordinatorView: View {
     private func destinationView(for state: AppScreen) -> some View {
         switch state {
         case .userList:
-            UserListScreen(navigationStack: $navigationStack)
+            let networkClient = DefaultNetworkClient(config: URLSessionConfiguration.default)
+            let fetchUsersUseCase = FetchUsersUseCaseImpl(networkClient: networkClient)
+            let viewModel = UserListViewModel(fetchUsersUseCase: fetchUsersUseCase)
+            UserListScreen(viewModel: viewModel, navigationStack: $navigationStack)
         case .userDetails(let user):
             UserDetailsScreen(viewModel: UserDetailsViewModel(user: user))
         }

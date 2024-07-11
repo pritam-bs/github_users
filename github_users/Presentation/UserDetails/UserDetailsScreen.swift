@@ -13,7 +13,7 @@ struct UserDetailsScreen: View {
     
     var body: some View {
         VStack {
-            Text("User Details for \(viewModel.user.name)")
+            Text("User Details for \(viewModel.user.login)")
         }
         .navigationTitle("User Details")
     }
