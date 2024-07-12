@@ -47,6 +47,7 @@
 		9C9C2ED42C3FEE98004DEFBD /* UserDetailsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2ED32C3FEE98004DEFBD /* UserDetailsDTO.swift */; };
 		9C9C2ED62C3FEF35004DEFBD /* UserDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2ED52C3FEF35004DEFBD /* UserDetailsEntity.swift */; };
 		9C9C2ED82C3FF198004DEFBD /* UserDetailsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2ED72C3FF198004DEFBD /* UserDetailsMapper.swift */; };
+		9CA4C3BB2C411C6800652D59 /* RepositoryWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3BA2C411C6800652D59 /* RepositoryWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		9C9C2ED32C3FEE98004DEFBD /* UserDetailsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsDTO.swift; sourceTree = "<group>"; };
 		9C9C2ED52C3FEF35004DEFBD /* UserDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntity.swift; sourceTree = "<group>"; };
 		9C9C2ED72C3FF198004DEFBD /* UserDetailsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsMapper.swift; sourceTree = "<group>"; };
+		9CA4C3BA2C411C6800652D59 /* RepositoryWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		9C9C2E852C3DC277004DEFBD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9CA4C3B82C41174C00652D59 /* RepositoryWebView */,
 				9CA4C3B72C40F0E400652D59 /* UserAvatar */,
 				9C9C2E6B2C3D0361004DEFBD /* UserList */,
 				9C9C2E6C2C3D0373004DEFBD /* UserDetails */,
@@ -376,6 +379,14 @@
 				9C9C2EB62C3F3429004DEFBD /* UserAvatarView.swift */,
 			);
 			path = UserAvatar;
+			sourceTree = "<group>";
+		};
+		9CA4C3B82C41174C00652D59 /* RepositoryWebView */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4C3BA2C411C6800652D59 /* RepositoryWebView.swift */,
+			);
+			path = RepositoryWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +552,7 @@
 				9C9C2EA52C3DEEF7004DEFBD /* FetchUserDetailsUseCase.swift in Sources */,
 				9C9C2E842C3D773A004DEFBD /* CoordinatorView.swift in Sources */,
 				9C9C2EB72C3F3429004DEFBD /* UserAvatarView.swift in Sources */,
+				9CA4C3BB2C411C6800652D59 /* RepositoryWebView.swift in Sources */,
 				9C9C2EB92C3F8FA6004DEFBD /* NetworkError.swift in Sources */,
 				9C9C2E782C3D053B004DEFBD /* UserDetailsScreen.swift in Sources */,
 			);

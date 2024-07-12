@@ -34,7 +34,9 @@ struct CoordinatorView: View {
             
             let viewModel = UserDetailsViewModel(userLogin: user.login, fetchUserDetailsUseCase: fetchUserDetailsUseCase, fetchRepositoryUseCase: fetchRepositoryUseCase)
             
-            UserDetailsScreen(viewModel: viewModel)
+            UserDetailsScreen(viewModel: viewModel, navigationStack: $navigationStack)
+        case .repositoryWebView(let url, let name):
+            RepositoryWebView(url: url, name: name)
         }
     }
 }

@@ -50,6 +50,7 @@ struct UserListScreen: View {
         Text(message)
             .font(.body)
             .foregroundStyle(.secondary)
+            .multilineTextAlignment(.center)
             .padding()
     }
     
@@ -62,12 +63,13 @@ struct UserListScreen: View {
                     Text(error.localizedDescription)
                         .font(.body)
                         .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
                     // Retry button
                     Button{
                         viewModel.fetchUsers()
                     } label: {
                         Text("Try again")
-                            .font(.headline)
+                            .font(.body)
                             .foregroundColor(.white)
                             .padding(8)
                             .background(Color.blue)
@@ -80,6 +82,8 @@ struct UserListScreen: View {
             default:
                 Text(error.localizedDescription)
                     .font(.body)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
                     .padding()
             }
         }
@@ -102,7 +106,6 @@ struct UserListScreen: View {
                 
                 Spacer()
             }
-            
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)

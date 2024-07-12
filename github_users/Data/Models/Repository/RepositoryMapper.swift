@@ -14,11 +14,13 @@ struct RepositoryMapper {
             name: dto.name,
             language: dto.language ?? "Unknown", // Default to "Unknown" if language is nil
             stars: dto.stargazersCount,
-            description: dto.description ?? "No description" // Default to "No description" if description is nil
+            description: dto.description ?? "No description", // Default to "No description" if description is nil
+            url: dto.htmlURL,
+            fork: dto.fork
         )
     }
     
-    static func map(dto: RepositorysDTO) -> RepositorysEntity {
+    static func map(dto: RepositoriesDTO) -> RepositorysEntity {
         return dto.map { map(dto: $0) }
     }
 }

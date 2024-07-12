@@ -58,7 +58,7 @@ struct UserView: View {
             .padding()
             .background(Color(.background))
             .cornerRadius(16)
-            .shadow(color: .primary.opacity(0.2), radius: 6, y: 4)
+            .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
         }
 }
 

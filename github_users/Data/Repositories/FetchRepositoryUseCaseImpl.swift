@@ -17,7 +17,7 @@ class FetchRepositoryUseCaseImpl: FetchRepositoryUseCase {
     
     func execute(userLogin: String) -> AnyPublisher<RepositorysEntity, AppError> {
         return networkClient.request(router: ApiRouter.repo(userLogin))
-            .map { (repositorysDTO: RepositorysDTO) in
+            .map { (repositorysDTO: RepositoriesDTO) in
                 RepositoryMapper.map(dto: repositorysDTO)
             }
             .mapError { netWorkError in
