@@ -10,5 +10,4 @@ import Foundation
 enum AppScreen: Hashable {
     case userList
     case userDetails(User)
-    case repositoryWebView(String, String)
 }

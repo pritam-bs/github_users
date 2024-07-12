@@ -9,8 +9,17 @@ import Foundation
 import SwiftUI
 
 struct UserDetailsScreen: View {
+    
+    struct RepositoryData: Identifiable {
+        // Unique identifier for each instance
+        let id = UUID()
+        let url: String
+        let name: String
+    }
+    
     @StateObject var viewModel: UserDetailsViewModel
     @Binding var navigationStack: [AppScreen]
+    @State private var repositorySafariViewData: RepositoryData? = nil
     
     var body: some View {
         Group {
@@ -22,6 +31,10 @@ struct UserDetailsScreen: View {
             default:
                 contentView
             }
+        }
+        .sheet(item: $repositorySafariViewData) { data in
+            RepositorySafariView(url: data.url, name: data.name)
+                .presentationDetents([.large])
         }
         .navigationTitle("User Details")
         .onAppear{
@@ -89,15 +102,12 @@ struct UserDetailsScreen: View {
             
             // Repo list view
             ForEach(viewModel.repositories) { repository in
-                NavigationLink(value: AppScreen.repositoryWebView(repository.url, repository.name)) {
+                Button(action: {
+                    repositorySafariViewData = RepositoryData(url: repository.url, name: repository.name)
+                }) {
                     RepositoryListItemView(repository: repository)
                 }
-                .listRowBackground(Color.clear)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color(.background))
-                .cornerRadius(8)
-                .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
+                .buttonStyle(PlainButtonStyle())
             }
             .listRowSeparator(.hidden)
         }
