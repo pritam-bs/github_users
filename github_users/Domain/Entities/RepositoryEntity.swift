@@ -13,6 +13,8 @@ struct RepositoryEntity: Identifiable {
     let language: String
     let stars: Int
     let description: String
+    let url: String
+    let fork: Bool
 }
 
 typealias RepositorysEntity = [RepositoryEntity]

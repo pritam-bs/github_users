@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UserDetailsScreen: View {
     @StateObject var viewModel: UserDetailsViewModel
+    @Binding var navigationStack: [AppScreen]
     
     var body: some View {
         Group {
@@ -31,7 +32,9 @@ struct UserDetailsScreen: View {
     // Initial message when the list is empty
     private func makeEmptyView(message: String) -> some View {
         Text(message)
-            .font(.headline)
+            .font(.body)
+            .foregroundStyle(.secondary)
+            .multilineTextAlignment(.center)
             .padding()
     }
     
@@ -42,13 +45,15 @@ struct UserDetailsScreen: View {
             case .noInternet, .timeout:
                 VStack {
                     Text(error.localizedDescription)
-                        .font(.headline)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
                     // Retry button
                     Button{
                         viewModel.fetchUserDetails()
                     } label: {
                         Text("Try again")
-                            .font(.headline)
+                            .font(.body)
                             .foregroundColor(.white)
                             .padding(8)
                             .background(Color.blue)
@@ -59,7 +64,9 @@ struct UserDetailsScreen: View {
                 .padding()
             default:
                 Text(error.localizedDescription)
-                    .font(.headline)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
                     .padding()
             }
         }
@@ -70,7 +77,7 @@ struct UserDetailsScreen: View {
         List {
             if let user = viewModel.user {
                 // User info view
-                HStack{
+                HStack {
                     Spacer()
                     UserView(userDetails: user)
                         .padding(.bottom, 16)
@@ -82,7 +89,15 @@ struct UserDetailsScreen: View {
             
             // Repo list view
             ForEach(viewModel.repositories) { repository in
-                RepositoryListItemView(repository: repository)
+                NavigationLink(value: AppScreen.repositoryWebView(repository.url, repository.name)) {
+                    RepositoryListItemView(repository: repository)
+                }
+                .listRowBackground(Color.clear)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color(.background))
+                .cornerRadius(8)
+                .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
             }
             .listRowSeparator(.hidden)
         }
@@ -99,5 +114,5 @@ struct UserDetailsScreen: View {
     
     @State var navigationStack: [AppScreen] = []
     
-    return UserDetailsScreen(viewModel: viewModel)
+    return UserDetailsScreen(viewModel: viewModel, navigationStack: $navigationStack)
 }
