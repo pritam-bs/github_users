@@ -20,9 +20,9 @@ class FetchUsersUseCaseImpl: FetchUsersUseCase {
             .map { (users: UsersDTO) in
                 UserMapper.map(dto: users)
             }
-            .mapError({ netWorkError in
+            .mapError{ netWorkError in
                 NetworkErrorMapper.map(error: netWorkError)
-            })
+            }
             .eraseToAnyPublisher()
     }
 }

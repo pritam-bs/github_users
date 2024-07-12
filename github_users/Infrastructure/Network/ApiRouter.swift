@@ -41,10 +41,10 @@ enum ApiRouter {
         switch self {
         case .users:
             return "/users"
-        case .userDetails(let userName):
-            return "/\(userName)"
-        case .repo(let userName):
-            return "/\(userName)/repos"
+        case .userDetails(let userLogin):
+            return "/users/\(userLogin)"
+        case .repo(let userLogin):
+            return "/users/\(userLogin)/repos"
         }
     }
     
@@ -92,6 +92,14 @@ enum ApiRouter {
     var cookie: HTTPCookie? {
         return nil
     }
+        
+    var githubAccessToken: String? {
+        if let accessToken = ProcessInfo.processInfo.environment["GITHUB_ACCESS_TOKEN"] {
+            return accessToken
+        } else {
+            return nil
+        }
+    }
     
     var headers: [String: String]? {
         if let cookie = cookie {
@@ -100,8 +108,12 @@ enum ApiRouter {
         
         var headers = [
             HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue,
-            HTTPHeaderField.acceptType.rawValue: ContentType.json.rawValue
+            HTTPHeaderField.acceptType.rawValue: ContentType.json.rawValue,
         ]
+        
+        if let token = githubAccessToken {
+            headers[HTTPHeaderField.authentication.rawValue] = "Bearer \(token)"
+        }
         
         if let url = urlComponents?.url {
             let cookies = HTTPCookie.requestHeaderFields(with: HTTPCookieStorage.shared.cookies(for: url) ?? [])

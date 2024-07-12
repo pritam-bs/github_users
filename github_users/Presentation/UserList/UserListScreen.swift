@@ -17,10 +17,13 @@ struct UserListScreen: View {
         return Group {
             switch viewModel.state {
             case .initial(let message):
+                // Show the initial message
                 makeEmptyView(message: message)
             case .initialWithError(let error):
+                // Show the error view
                 makeErrorView(error: error)
             default:
+                // Default, show the content view
                 contentView
             }
         }
@@ -30,67 +33,113 @@ struct UserListScreen: View {
         }
     }
     
+    // Loading view for fetching next page
     private var loadingView: some View {
         HStack {
             Spacer()
             ProgressView("Loading...")
             .frame(width: 120, height: 120, alignment: .center)
-            .font(.title)
+            .font(.headline)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
+    // Initial message when the list is empty
     private func makeEmptyView(message: String) -> some View {
         Text(message)
+            .font(.body)
+            .foregroundStyle(.secondary)
+            .padding()
     }
     
+    // Error view and retry button for only no internet and timeout
     private func makeErrorView(error: AppError) -> some View {
         Group {
             switch error {
             case .noInternet, .timeout:
                 VStack {
                     Text(error.localizedDescription)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                    // Retry button
                     Button{
                         viewModel.fetchUsers()
                     } label: {
                         Text("Try again")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.blue)
+                            .cornerRadius(4)
+                            .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
+                .padding()
             default:
                 Text(error.localizedDescription)
+                    .font(.body)
+                    .padding()
             }
         }
     }
     
+    // List item view
     private func makeUserListItem(user: User) -> some View {
         NavigationLink(value: AppScreen.userDetails(user)) {
-            UserAvatarView(imageUrl: URL(string: user.avatarURL ?? ""))
-                .frame(width: 40, height: 40)
-            Text(user.login)
+            HStack(spacing: 16) {
+                // User avatar
+                UserAvatarView(imageUrl: URL(string: user.avatarURL ?? ""))
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                
+                // User login
+                Text(user.login)
+                    .font(.body)
+                    .foregroundColor(.primary)
+                
+                Spacer()
+            }
+            
         }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.background))
+        .cornerRadius(8)
+        .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
+        .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        
     }
     
+    // Combine the list, loading view and error view as a list
     private var contentView: some View {
         Logger.shared.log("contentView State: \(viewModel.state)", level: .debug)
         return List() {
             ForEach(viewModel.users) { user in
                 makeUserListItem(user: user)
+                    .listRowBackground(Color.clear)
             }
-            switch viewModel.state {
-            case .loaded:
-                loadingView
-                    .onAppear {
-                        viewModel.fetchUsers()
-                    }
-            case .loadingNext:
-                loadingView
-            case .error(let error):
-                makeErrorView(error: error)
-            default:
-                EmptyView()
+            Group {
+                switch viewModel.state {
+                case .loaded:
+                    loadingView
+                        .onAppear {
+                            viewModel.fetchUsers()
+                        }
+                case .loadingNext:
+                    loadingView
+                case .error(let error):
+                    makeErrorView(error: error)
+                default:
+                    EmptyView()
+                }
             }
+            .listRowBackground(Color.clear)
         }
+        .listStyle(PlainListStyle())
         .scrollContentBackground(.hidden)
     }
 }

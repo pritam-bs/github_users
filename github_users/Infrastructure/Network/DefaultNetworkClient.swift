@@ -10,9 +10,12 @@ import Combine
 
 class DefaultNetworkClient: NetworkClient {
     let config: URLSessionConfiguration
+    private let decoder: JSONDecoder
     
     init(config: URLSessionConfiguration) {
         self.config = config
+        decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
     }
     
     func request<T: Decodable>(router: ApiRouter) -> AnyPublisher<T, NetworkError> {
@@ -33,7 +36,7 @@ class DefaultNetworkClient: NetworkClient {
                 return result.data
                 
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: decoder)
             .mapError { error -> NetworkError in
                 if let urlError = error as? URLError {
                     return .network(urlError)

@@ -19,11 +19,11 @@ class Logger {
         let logMessage = "[\(timestamp)][\(level.rawValue)] \(message)"
         
         #if DEBUG
-        print("[\(level.rawValue)] \(message)")
-        storeLog("[\(level.rawValue)] \(message)")
+        print(logMessage)
+        storeLog(logMessage)
         #else
         if level == .error {
-            storeLog("[\(level.rawValue)] \(message)")
+            storeLog(logMessage)
         }
         #endif
     }
