@@ -34,25 +34,25 @@ class UserListViewModel: ObservableObject {
         }
         
         fetchUsersUseCase.execute(since: id, perPage: perPage)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] completion in
-                    guard let self = self else { return }
-                    switch completion {
-                    case .finished:
-                        state = .loaded
-                        break
-                    case .failure(let error):
-                        guard !self.users.isEmpty else {
-                            self.state = .initialWithError(error)
-                            return
-                        }
-                        self.state = .error(error)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .finished:
+                    state = .loaded
+                    break
+                case .failure(let error):
+                    guard !self.users.isEmpty else {
+                        self.state = .initialWithError(error)
+                        return
                     }
-                }, receiveValue: { [weak self] users in
-                    guard let self = self else { return }
-                    self.users.append(contentsOf: users)
-                    self.state = .loaded
-                })
-                .store(in: &cancellables)
-        }
+                    self.state = .error(error)
+                }
+            }, receiveValue: { [weak self] users in
+                guard let self = self else { return }
+                self.users.append(contentsOf: users)
+                self.state = .loaded
+            })
+            .store(in: &cancellables)
+    }
 }

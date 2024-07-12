@@ -18,7 +18,7 @@ struct UserAvatarView: View {
     }
     
     var body: some View {
-        ZStack {
+        Group {
             if let imageUrl {
                 AsyncImage(url: imageUrl) { state in
                     if let image = state.image {
@@ -41,7 +41,6 @@ struct UserAvatarView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    let url = URL(string: "https://avatars.githubusercontent.com/u/45875515?v=4")
     return UserAvatarView(imageUrl: nil)
         .padding()
         .frame(width: 200, height: 200)

@@ -25,9 +25,16 @@ struct CoordinatorView: View {
             let networkClient = DefaultNetworkClient(config: URLSessionConfiguration.default)
             let fetchUsersUseCase = FetchUsersUseCaseImpl(networkClient: networkClient)
             let viewModel = UserListViewModel(fetchUsersUseCase: fetchUsersUseCase)
+            
             UserListScreen(viewModel: viewModel, navigationStack: $navigationStack)
         case .userDetails(let user):
-            UserDetailsScreen(viewModel: UserDetailsViewModel(user: user))
+            let networkClient = DefaultNetworkClient(config: URLSessionConfiguration.default)
+            let fetchUserDetailsUseCase = FetchUserDetailsUseCaseImpl(networkClient: networkClient)
+            let fetchRepositoryUseCase = FetchRepositoryUseCaseImpl(networkClient: networkClient)
+            
+            let viewModel = UserDetailsViewModel(userLogin: user.login, fetchUserDetailsUseCase: fetchUserDetailsUseCase, fetchRepositoryUseCase: fetchRepositoryUseCase)
+            
+            UserDetailsScreen(viewModel: viewModel)
         }
     }
 }

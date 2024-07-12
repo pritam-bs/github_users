@@ -8,6 +8,6 @@
 import Combine
 import Foundation
 
-protocol FetchUserUseCase {
-    func execute(userName: String) -> AnyPublisher<UserDetails, AppError>
+protocol FetchUserDetailsUseCase {
+    func execute(userLogin: String) -> AnyPublisher<UserDetailsEntity, AppError>
 }
