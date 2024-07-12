@@ -37,6 +37,12 @@ struct RepositoryListItemView: View {
                 .foregroundColor(.secondary)
                 .lineLimit(2)
         }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.background))
+        .cornerRadius(8)
+        .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
+
     }
 }
 
