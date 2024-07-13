@@ -55,7 +55,8 @@ class UserDetailsViewModel: ObservableObject {
             }, receiveValue: { [weak self] (userDetails, repositories) in
                 guard let self = self else { return }
                 self.user = userDetails
-                self.repositories = repositories
+                // Only original repositories (non-forked)
+                self.repositories = repositories.filter{ !$0.fork }
                 self.state = .loaded
             })
             .store(in: &cancellables)
