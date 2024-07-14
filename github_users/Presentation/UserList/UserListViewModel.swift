@@ -63,7 +63,7 @@ class UserListViewModel: ObservableObject {
                 guard let self = self else { return }
                 
                 // Save fetched users to cache
-                if let since = self.users.isEmpty ? 0 : users.last?.id {
+                if let since = self.users.isEmpty ? 0 : self.users.last?.id {
                     let key = UsersCacheKey(key: usersCacheKey, since: since)
                     self.usersCacheUseCase.saveToCache(entity: users, forKey: key)
                 }

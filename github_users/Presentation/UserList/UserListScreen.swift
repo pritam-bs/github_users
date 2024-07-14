@@ -44,7 +44,7 @@ struct UserListScreen: View {
             .font(.headline)
             Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .listRowSeparator(.hidden)
     }
     
     // Initial message when the list is empty
@@ -90,6 +90,7 @@ struct UserListScreen: View {
                     .padding()
             }
         }
+        .listRowSeparator(.hidden)
     }
     
     // List item view

@@ -5,10 +5,12 @@
 //  Created by Pritam Biswas on 10.07.2024.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct UserAvatarView: View {
     var imageUrl: URL?
+    @State private var loadImageFailed = false
     
     private var fallbackImage: some View {
         let randomizedColor: Color = [.blue, .green, .red, .orange, .purple].shuffled().first!
@@ -19,17 +21,17 @@ struct UserAvatarView: View {
     
     var body: some View {
         Group {
-            if let imageUrl {
-                AsyncImage(url: imageUrl) { state in
-                    if let image = state.image {
-                        image.resizable()
-                    } else if state.error != nil {
-                        fallbackImage
-                    } else {
+            if let imageUrl, !loadImageFailed {
+                KFImage(imageUrl)
+                    .resizable()
+                    .onFailure { _ in
+                        loadImageFailed = true
+                    }
+                    .placeholder {
                         ProgressView()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
-                }
+                    .cancelOnDisappear(true)
             } else {
                 fallbackImage
             }
