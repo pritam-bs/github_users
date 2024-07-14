@@ -8,5 +8,5 @@
 import Combine
 
 protocol FetchUsersUseCase {
-    func execute(since id: Int, perPage: Int) -> AnyPublisher<Users, AppError>
+    func execute(since id: Int, perPage: Int) -> AnyPublisher<UsersEntity, AppError>
 }

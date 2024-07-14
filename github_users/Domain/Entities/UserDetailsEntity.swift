@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserDetailsEntity {
+struct UserDetailsEntity: Codable {
     var avatarURL: String
     var username: String
     var fullName: String?

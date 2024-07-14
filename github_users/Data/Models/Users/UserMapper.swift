@@ -8,15 +8,15 @@
 import Foundation
 
 struct UserMapper {
-    static func map(dto: UserDTO) -> User {
-        return User(
+    static func map(dto: UserDTO) -> UserEntity {
+        return UserEntity(
             login: dto.login,
             id: dto.id,
             avatarURL: dto.avatarURL
         )
     }
 
-    static func map(dto: UsersDTO) -> Users {
+    static func map(dto: UsersDTO) -> UsersEntity {
         return dto.map { map(dto: $0) }
     }
 }

@@ -48,6 +48,18 @@
 		9C9C2ED62C3FEF35004DEFBD /* UserDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2ED52C3FEF35004DEFBD /* UserDetailsEntity.swift */; };
 		9C9C2ED82C3FF198004DEFBD /* UserDetailsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2ED72C3FF198004DEFBD /* UserDetailsMapper.swift */; };
 		9CA4C3BF2C41C88300652D59 /* RepositorySafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3BE2C41C88300652D59 /* RepositorySafariView.swift */; };
+		9CA4C3C32C4285FE00652D59 /* CacheCodableManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3C22C4285FE00652D59 /* CacheCodableManagerProtocol.swift */; };
+		9CA4C3C52C42861F00652D59 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3C42C42861F00652D59 /* CacheManager.swift */; };
+		9CA4C3CE2C429FE000652D59 /* UsersCacheUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3CD2C429FE000652D59 /* UsersCacheUseCaseImpl.swift */; };
+		9CA4C3D02C429FF200652D59 /* UserDetailsCacheUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3CF2C429FF200652D59 /* UserDetailsCacheUseCaseImpl.swift */; };
+		9CA4C3D22C42A01D00652D59 /* RepositoryCacheUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3D12C42A01D00652D59 /* RepositoryCacheUseCaseImpl.swift */; };
+		9CA4C3D42C42A0A700652D59 /* UsersCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3D32C42A0A700652D59 /* UsersCacheKey.swift */; };
+		9CA4C3D62C42AC0900652D59 /* RepositoryCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3D52C42AC0900652D59 /* RepositoryCacheKey.swift */; };
+		9CA4C3D82C42AC1C00652D59 /* UserDetailsCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3D72C42AC1C00652D59 /* UserDetailsCacheKey.swift */; };
+		9CA4C3DA2C43435300652D59 /* UsersCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3D92C43435300652D59 /* UsersCacheUseCase.swift */; };
+		9CA4C3DC2C43446D00652D59 /* UserDetailsCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3DB2C43446D00652D59 /* UserDetailsCacheUseCase.swift */; };
+		9CA4C3DE2C43448100652D59 /* RepositoryCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3DD2C43448100652D59 /* RepositoryCacheUseCase.swift */; };
+		9CA4C3E02C43959500652D59 /* UserOrderedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C3DF2C43959500652D59 /* UserOrderedSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +124,18 @@
 		9C9C2ED52C3FEF35004DEFBD /* UserDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntity.swift; sourceTree = "<group>"; };
 		9C9C2ED72C3FF198004DEFBD /* UserDetailsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsMapper.swift; sourceTree = "<group>"; };
 		9CA4C3BE2C41C88300652D59 /* RepositorySafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySafariView.swift; sourceTree = "<group>"; };
+		9CA4C3C22C4285FE00652D59 /* CacheCodableManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCodableManagerProtocol.swift; sourceTree = "<group>"; };
+		9CA4C3C42C42861F00652D59 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		9CA4C3CD2C429FE000652D59 /* UsersCacheUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheUseCaseImpl.swift; sourceTree = "<group>"; };
+		9CA4C3CF2C429FF200652D59 /* UserDetailsCacheUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsCacheUseCaseImpl.swift; sourceTree = "<group>"; };
+		9CA4C3D12C42A01D00652D59 /* RepositoryCacheUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCacheUseCaseImpl.swift; sourceTree = "<group>"; };
+		9CA4C3D32C42A0A700652D59 /* UsersCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheKey.swift; sourceTree = "<group>"; };
+		9CA4C3D52C42AC0900652D59 /* RepositoryCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCacheKey.swift; sourceTree = "<group>"; };
+		9CA4C3D72C42AC1C00652D59 /* UserDetailsCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsCacheKey.swift; sourceTree = "<group>"; };
+		9CA4C3D92C43435300652D59 /* UsersCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheUseCase.swift; sourceTree = "<group>"; };
+		9CA4C3DB2C43446D00652D59 /* UserDetailsCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsCacheUseCase.swift; sourceTree = "<group>"; };
+		9CA4C3DD2C43448100652D59 /* RepositoryCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCacheUseCase.swift; sourceTree = "<group>"; };
+		9CA4C3DF2C43959500652D59 /* UserOrderedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderedSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +238,7 @@
 			children = (
 				9C9C2E712C3D046D004DEFBD /* UserListViewModel.swift */,
 				9C9C2E752C3D050E004DEFBD /* UserListScreen.swift */,
+				9CA4C3DF2C43959500652D59 /* UserOrderedSet.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -252,6 +277,7 @@
 		9C9C2E872C3DC29E004DEFBD /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9CA4C3CC2C4296A200652D59 /* CacheRepositories */,
 				9C9C2EBE2C3FA083004DEFBD /* Models */,
 				9C9C2EAE2C3DF5BD004DEFBD /* Protocol */,
 				9C9C2E882C3DC2B0004DEFBD /* Repositories */,
@@ -272,13 +298,13 @@
 		9C9C2E8B2C3DC4A8004DEFBD /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				9C9C2EC32C3FA88D004DEFBD /* NetworkError */,
-				9C9C2E8C2C3DC4B4004DEFBD /* Network */,
+				9CA4C3C12C4285A800652D59 /* Cache */,
+				9CA4C3C02C42858900652D59 /* Network */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		9C9C2E8C2C3DC4B4004DEFBD /* Network */ = {
+		9C9C2E8C2C3DC4B4004DEFBD /* NetworkClient */ = {
 			isa = PBXGroup;
 			children = (
 				9C9C2E8D2C3DC4E3004DEFBD /* DefaultNetworkClient.swift */,
@@ -286,7 +312,7 @@
 				9C9C2E912C3DC546004DEFBD /* NetworkConstants.swift */,
 				9C9C2E952C3DC5E9004DEFBD /* ApiRouter.swift */,
 			);
-			path = Network;
+			path = NetworkClient;
 			sourceTree = "<group>";
 		};
 		9C9C2E972C3DD54A004DEFBD /* Entities */ = {
@@ -306,6 +332,9 @@
 				9C9C2E9A2C3DD5A4004DEFBD /* FetchUsersUseCase.swift */,
 				9C9C2EA42C3DEEF7004DEFBD /* FetchUserDetailsUseCase.swift */,
 				9C9C2EA62C3DEF0A004DEFBD /* FetchRepositoryUseCase.swift */,
+				9CA4C3D92C43435300652D59 /* UsersCacheUseCase.swift */,
+				9CA4C3DB2C43446D00652D59 /* UserDetailsCacheUseCase.swift */,
+				9CA4C3DD2C43448100652D59 /* RepositoryCacheUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -314,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9C2EAF2C3DF5DE004DEFBD /* NetworkClient.swift */,
+				9CA4C3C22C4285FE00652D59 /* CacheCodableManagerProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -351,6 +381,7 @@
 			children = (
 				9C9C2E9E2C3DE694004DEFBD /* UserDTO.swift */,
 				9C9C2EC12C3FA497004DEFBD /* UserMapper.swift */,
+				9CA4C3D32C42A0A700652D59 /* UsersCacheKey.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -360,6 +391,7 @@
 			children = (
 				9C9C2ECA2C3FDCC6004DEFBD /* RepositoryDTO.swift */,
 				9C9C2ED02C3FDFEC004DEFBD /* RepositoryMapper.swift */,
+				9CA4C3D52C42AC0900652D59 /* RepositoryCacheKey.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -369,6 +401,7 @@
 			children = (
 				9C9C2ED32C3FEE98004DEFBD /* UserDetailsDTO.swift */,
 				9C9C2ED72C3FF198004DEFBD /* UserDetailsMapper.swift */,
+				9CA4C3D72C42AC1C00652D59 /* UserDetailsCacheKey.swift */,
 			);
 			path = UserDetails;
 			sourceTree = "<group>";
@@ -387,6 +420,33 @@
 				9CA4C3BE2C41C88300652D59 /* RepositorySafariView.swift */,
 			);
 			path = RepositoryWebView;
+			sourceTree = "<group>";
+		};
+		9CA4C3C02C42858900652D59 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9C9C2E8C2C3DC4B4004DEFBD /* NetworkClient */,
+				9C9C2EC32C3FA88D004DEFBD /* NetworkError */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9CA4C3C12C4285A800652D59 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4C3C42C42861F00652D59 /* CacheManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		9CA4C3CC2C4296A200652D59 /* CacheRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4C3CD2C429FE000652D59 /* UsersCacheUseCaseImpl.swift */,
+				9CA4C3CF2C429FF200652D59 /* UserDetailsCacheUseCaseImpl.swift */,
+				9CA4C3D12C42A01D00652D59 /* RepositoryCacheUseCaseImpl.swift */,
+			);
+			path = CacheRepositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,9 +586,14 @@
 				9C9C2E722C3D046D004DEFBD /* UserListViewModel.swift in Sources */,
 				9C9C2EA32C3DED96004DEFBD /* AppError.swift in Sources */,
 				9C9C2ED42C3FEE98004DEFBD /* UserDetailsDTO.swift in Sources */,
+				9CA4C3DA2C43435300652D59 /* UsersCacheUseCase.swift in Sources */,
 				9C9C2ED62C3FEF35004DEFBD /* UserDetailsEntity.swift in Sources */,
 				9C9C2ED82C3FF198004DEFBD /* UserDetailsMapper.swift in Sources */,
+				9CA4C3D42C42A0A700652D59 /* UsersCacheKey.swift in Sources */,
 				9C9C2EB02C3DF5DE004DEFBD /* NetworkClient.swift in Sources */,
+				9CA4C3DC2C43446D00652D59 /* UserDetailsCacheUseCase.swift in Sources */,
+				9CA4C3D62C42AC0900652D59 /* RepositoryCacheKey.swift in Sources */,
+				9CA4C3D02C429FF200652D59 /* UserDetailsCacheUseCaseImpl.swift in Sources */,
 				9C9C2EC62C3FD5A1004DEFBD /* UserView.swift in Sources */,
 				9C9C2E922C3DC546004DEFBD /* NetworkConstants.swift in Sources */,
 				9C9C2EB32C3E599C004DEFBD /* Logger.swift in Sources */,
@@ -537,12 +602,14 @@
 				9C9C2EAB2C3DF50E004DEFBD /* FetchUserDetailsUseCaseImpl.swift in Sources */,
 				9C9C2EAD2C3DF51D004DEFBD /* FetchRepositoryUseCaseImpl.swift in Sources */,
 				9C9C2ECD2C3FDDA2004DEFBD /* RepositoryEntity.swift in Sources */,
+				9CA4C3D22C42A01D00652D59 /* RepositoryCacheUseCaseImpl.swift in Sources */,
 				9C9C2E762C3D050E004DEFBD /* UserListScreen.swift in Sources */,
 				9C9C2E802C3D064F004DEFBD /* AppScreen.swift in Sources */,
 				9C9C2E962C3DC5E9004DEFBD /* ApiRouter.swift in Sources */,
 				9C9C2E2A2C3C7C2A004DEFBD /* GithubUsersApp.swift in Sources */,
 				9C9C2E8E2C3DC4E3004DEFBD /* DefaultNetworkClient.swift in Sources */,
 				9C9C2EC82C3FDB62004DEFBD /* RepositoryListItemView.swift in Sources */,
+				9CA4C3DE2C43448100652D59 /* RepositoryCacheUseCase.swift in Sources */,
 				9C9C2ED12C3FDFEC004DEFBD /* RepositoryMapper.swift in Sources */,
 				9C9C2E742C3D04EF004DEFBD /* UserDetailsViewModel.swift in Sources */,
 				9C9C2ECB2C3FDCC6004DEFBD /* RepositoryDTO.swift in Sources */,
@@ -551,10 +618,15 @@
 				9C9C2E9B2C3DD5A4004DEFBD /* FetchUsersUseCase.swift in Sources */,
 				9C9C2EA52C3DEEF7004DEFBD /* FetchUserDetailsUseCase.swift in Sources */,
 				9C9C2E842C3D773A004DEFBD /* CoordinatorView.swift in Sources */,
+				9CA4C3CE2C429FE000652D59 /* UsersCacheUseCaseImpl.swift in Sources */,
+				9CA4C3C52C42861F00652D59 /* CacheManager.swift in Sources */,
 				9C9C2EB72C3F3429004DEFBD /* UserAvatarView.swift in Sources */,
 				9C9C2EB92C3F8FA6004DEFBD /* NetworkError.swift in Sources */,
 				9CA4C3BF2C41C88300652D59 /* RepositorySafariView.swift in Sources */,
 				9C9C2E782C3D053B004DEFBD /* UserDetailsScreen.swift in Sources */,
+				9CA4C3D82C42AC1C00652D59 /* UserDetailsCacheKey.swift in Sources */,
+				9CA4C3C32C4285FE00652D59 /* CacheCodableManagerProtocol.swift in Sources */,
+				9CA4C3E02C43959500652D59 /* UserOrderedSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

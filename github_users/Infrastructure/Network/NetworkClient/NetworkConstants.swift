@@ -29,7 +29,7 @@ public enum HTTPHeaderField: String {
 }
 
 struct NetworkProperties {
-    static var timeOut: TimeInterval { return 60 }
+    static var timeOut: TimeInterval { return 15 }
     static var cachePolicy: URLRequest.CachePolicy { return .useProtocolCachePolicy }
 }
 

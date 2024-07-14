@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepositoryEntity: Identifiable {
+struct RepositoryEntity: Codable, Identifiable, Hashable {
     let id: Int
     let name: String
     let language: String
@@ -17,4 +17,4 @@ struct RepositoryEntity: Identifiable {
     let fork: Bool
 }
 
-typealias RepositorysEntity = [RepositoryEntity]
+typealias RepositoriesEntity = [RepositoryEntity]
