@@ -103,31 +103,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF792382-F9BF-44B6-9F21-4A1055AC6FD9"
+            uuid = "C49CB1E1-8A7A-410F-9824-7CBE8F6E39A4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserList/UserListViewModel.swift"
+            filePath = "github_users/Presentation/UserAvatar/UserAvatarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "fetchUsers(since:perPage:)"
-            landmarkType = "7">
+            startingLineNumber = "96"
+            endingLineNumber = "96">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87734F64-D745-44CB-880B-995B24CCA332"
-            shouldBeEnabled = "Yes"
+            uuid = "F6821B1B-351A-490D-A3C8-C6B35C76F658"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "github_users/Infrastructure/Cache/CacheManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "fetch(forKey:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,187 +133,43 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B58AB43B-724B-4B62-877F-3C97F05AF0EF"
+            uuid = "AF03A856-EDD6-4AC1-A106-0AF0B635E005"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "github_users/Infrastructure/Cache/CacheManager.swift"
+            filePath = "github_users/Presentation/UserAvatar/UserAvatarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "save(entity:forKey:)"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "18CF4FBF-0CE9-410E-B99F-16EFE988B5F6"
-            shouldBeEnabled = "Yes"
+            uuid = "37912F3A-18B9-43D1-A45D-141D96303EEA"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserList/UserListViewModel.swift"
+            filePath = "github_users/Presentation/UserAvatar/UserAvatarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "fetchUsers(since:perPage:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "18CF4FBF-0CE9-410E-B99F-16EFE988B5F6 - d98da3ea726b2e94"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Array&lt;github_users.UserEntity&gt;) -&gt; () in github_users.UserListViewModel.fetchUsers(since: Swift.Int, perPage: Swift.Int) -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserList/UserListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-               <Location
-                  uuid = "18CF4FBF-0CE9-410E-B99F-16EFE988B5F6 - d98da3ea726b2e94"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Array&lt;github_users.UserEntity&gt;) -&gt; () in github_users.UserListViewModel.fetchUsers(since: Swift.Int, perPage: Swift.Int) -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserList/UserListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-            </Locations>
+            startingLineNumber = "56"
+            endingLineNumber = "56">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D096192-6FEA-4EA4-9AD2-BCF030D9997F"
+            uuid = "5A272EF6-88D3-4074-BC4E-5658C6F86FCE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
+            filePath = "github_users/Presentation/UserAvatar/UserAvatarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "fetchUserDetails()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9D096192-6FEA-4EA4-9AD2-BCF030D9997F - 48d6a54dc2593a92"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (github_users.UserDetailsEntity, Swift.Array&lt;github_users.RepositoryEntity&gt;) -&gt; () in github_users.UserDetailsViewModel.fetchUserDetails() -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90">
-               </Location>
-               <Location
-                  uuid = "9D096192-6FEA-4EA4-9AD2-BCF030D9997F - 48d6a54dc2593b71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (github_users.UserDetailsEntity, Swift.Array&lt;github_users.RepositoryEntity&gt;) -&gt; () in github_users.UserDetailsViewModel.fetchUserDetails() -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6A7EF559-3F73-4D5C-950A-5B2751D1A26F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "fetchUserDetails()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "862DC6A9-3C5D-46FA-9847-9D17EF76FF6B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "fetchUserDetails()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4E12C03A-364C-4241-8D33-B3D4E2D1149D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "fetchUserDetails()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4E12C03A-364C-4241-8D33-B3D4E2D1149D - 4947d6ec5c70476c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "github_users.UserDetailsViewModel.fetchUserDetails() -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60">
-               </Location>
-               <Location
-                  uuid = "4E12C03A-364C-4241-8D33-B3D4E2D1149D - 4947d6ec5c70474b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "github_users.UserDetailsViewModel.fetchUserDetails() -&gt; ()"
-                  moduleName = "github_users"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pritam/projects/github_users/github_users/Presentation/UserDetails/UserDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61">
-               </Location>
-            </Locations>
+            startingLineNumber = "75"
+            endingLineNumber = "75">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
