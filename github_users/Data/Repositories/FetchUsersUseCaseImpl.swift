@@ -15,7 +15,7 @@ class FetchUsersUseCaseImpl: FetchUsersUseCase {
         self.networkClient = networkClient
     }
 
-    func execute(since id: Int, perPage: Int) -> AnyPublisher<Users, AppError> {
+    func execute(since id: Int, perPage: Int) -> AnyPublisher<UsersEntity, AppError> {
         return networkClient.request(router: ApiRouter.users(id, perPage))
             .map { (users: UsersDTO) in
                 UserMapper.map(dto: users)

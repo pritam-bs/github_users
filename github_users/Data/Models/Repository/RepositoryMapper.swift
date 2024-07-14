@@ -20,7 +20,7 @@ struct RepositoryMapper {
         )
     }
     
-    static func map(dto: RepositoriesDTO) -> RepositorysEntity {
+    static func map(dto: RepositoriesDTO) -> RepositoriesEntity {
         return dto.map { map(dto: $0) }
     }
 }

@@ -120,7 +120,19 @@ struct UserDetailsScreen: View {
     let fetchUserDetailsUseCase = FetchUserDetailsUseCaseImpl(networkClient: networkClient)
     let fetchRepositoryUseCase = FetchRepositoryUseCaseImpl(networkClient: networkClient)
     
-    let viewModel = UserDetailsViewModel(userLogin: "octocat", fetchUserDetailsUseCase: fetchUserDetailsUseCase, fetchRepositoryUseCase: fetchRepositoryUseCase)
+    let userDetailsCacheManager = CacheManager<UserDetailsCacheKey, UserDetailsEntity>()
+    let userDetailsCacheUseCase = UserDetailsCacheUseCaseImpl(cacheManager: userDetailsCacheManager)
+    
+    let repositoryCacheManager = CacheManager<RepositoryCacheKey, RepositoriesEntity>()
+    let repositoryCacheUseCase = RepositoryCacheUseCaseImpl(cacheManager: repositoryCacheManager)
+    
+    let viewModel = UserDetailsViewModel(
+        userLogin: "octocat",
+        fetchUserDetailsUseCase: fetchUserDetailsUseCase,
+        fetchRepositoryUseCase: fetchRepositoryUseCase,
+        userDetailsCacheUseCase: userDetailsCacheUseCase,
+        repositoryCacheUseCase: repositoryCacheUseCase
+    )
     
     @State var navigationStack: [AppScreen] = []
     

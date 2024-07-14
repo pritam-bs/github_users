@@ -29,7 +29,9 @@ struct UserListScreen: View {
         }
         .navigationTitle("Users")
         .onAppear {
-            viewModel.fetchUsers()
+            if viewModel.users.isEmpty {
+                viewModel.fetchUsers(since: 0)
+            }
         }
     }
     
@@ -66,7 +68,8 @@ struct UserListScreen: View {
                         .multilineTextAlignment(.center)
                     // Retry button
                     Button{
-                        viewModel.fetchUsers()
+                        let id = viewModel.users.last?.id ?? 0
+                        viewModel.fetchUsers(since: id)
                     } label: {
                         Text("Try again")
                             .font(.body)
@@ -90,7 +93,7 @@ struct UserListScreen: View {
     }
     
     // List item view
-    private func makeUserListItem(user: User) -> some View {
+    private func makeUserListItem(user: UserEntity) -> some View {
         NavigationLink(value: AppScreen.userDetails(user)) {
             HStack(spacing: 16) {
                 // User avatar
@@ -130,7 +133,9 @@ struct UserListScreen: View {
                 case .loaded:
                     loadingView
                         .onAppear {
-                            viewModel.fetchUsers()
+                            if let id = viewModel.users.last?.id {
+                                viewModel.fetchUsers(since: id)
+                            }
                         }
                 case .loadingNext:
                     loadingView
@@ -150,7 +155,12 @@ struct UserListScreen: View {
 #Preview {
     let networkClient = DefaultNetworkClient(config: URLSessionConfiguration.default)
     let fetchUsersUseCase = FetchUsersUseCaseImpl(networkClient: networkClient)
-    let viewModel = UserListViewModel(fetchUsersUseCase: fetchUsersUseCase)
+    
+    let cacheManager = CacheManager<UsersCacheKey, UsersEntity>()
+    let usersCacheUseCase = UsersCacheUseCaseImpl(cacheManager: cacheManager)
+    
+    let viewModel = UserListViewModel(fetchUsersUseCase: fetchUsersUseCase, usersCacheUseCase: usersCacheUseCase)
+    
     @State var navigationStack: [AppScreen] = []
     
     return UserListScreen(viewModel: viewModel, navigationStack: $navigationStack)

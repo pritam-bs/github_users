@@ -17,20 +17,31 @@ class UserListViewModel: ObservableObject {
         case error(AppError)
     }
     
-    @Published var users: Users = []
+    @Published var users: UserOrderedSet<UserEntity> = []
     @Published var state: LoadingState = .initial("Fetching users, please wait...")
     
     private var fetchUsersUseCase: FetchUsersUseCase
+    private var usersCacheUseCase: UsersCacheUseCase
+    private let usersCacheKey = "UsersCacheKey"
     private var cancellables: Set<AnyCancellable> = []
     
-    init(fetchUsersUseCase: FetchUsersUseCase) {
+    init(fetchUsersUseCase: FetchUsersUseCase,
+         usersCacheUseCase: UsersCacheUseCase) {
         self.fetchUsersUseCase = fetchUsersUseCase
+        self.usersCacheUseCase = usersCacheUseCase
     }
     
-    func fetchUsers(perPage: Int = 30) {
-        let id = users.last?.id ?? 0
-        if id > 0 {
+    func fetchUsers(since id: Int, perPage: Int = 30) {
+        if !users.isEmpty {
             state = .loadingNext
+        }
+        
+        let key = UsersCacheKey(key: usersCacheKey, since: id)
+        if let cachedUsers =  self.usersCacheUseCase.fetchFromCache(forKey: key) {
+            self.users.append(contentsOf: cachedUsers)
+            self.state = .loaded
+            
+            return
         }
         
         fetchUsersUseCase.execute(since: id, perPage: perPage)
@@ -50,6 +61,13 @@ class UserListViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] users in
                 guard let self = self else { return }
+                
+                // Save fetched users to cache
+                if let since = self.users.isEmpty ? 0 : users.last?.id {
+                    let key = UsersCacheKey(key: usersCacheKey, since: since)
+                    self.usersCacheUseCase.saveToCache(entity: users, forKey: key)
+                }
+                
                 self.users.append(contentsOf: users)
                 self.state = .loaded
             })

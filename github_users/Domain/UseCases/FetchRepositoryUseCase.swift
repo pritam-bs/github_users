@@ -9,5 +9,5 @@ import Combine
 import Foundation
 
 protocol FetchRepositoryUseCase {
-    func execute(userLogin: String) -> AnyPublisher<RepositorysEntity, AppError>
+    func execute(userLogin: String) -> AnyPublisher<RepositoriesEntity, AppError>
 }

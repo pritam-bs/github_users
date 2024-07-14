@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct User: Identifiable, Hashable {
+struct UserEntity: Codable, Identifiable, Hashable {
     let login: String
     let id: Int
     let avatarURL: String?
 }
 
-typealias Users = [User]
+typealias UsersEntity = [UserEntity]

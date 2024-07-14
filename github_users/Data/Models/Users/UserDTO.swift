@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserDTO.swift
 //  github_users
 //
 //  Created by Pritam Biswas on 09.07.2024.
@@ -12,7 +12,7 @@
 
 import Foundation
 
-// MARK: - User
+// MARK: - UserDTO
 struct UserDTO: Codable {
     let login: String
     let id: Int
