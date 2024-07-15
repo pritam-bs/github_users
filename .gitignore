@@ -127,3 +127,29 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+### VSCode ###
+# User-specific settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Local history for VSCode
+.history/
+
+# VSCode directories
+.vscode-test/
+
+# Logs
+logs
+*.log
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Dependency directories
+node_modules/
+jspm_packages/
