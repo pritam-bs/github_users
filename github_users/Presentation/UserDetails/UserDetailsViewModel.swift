@@ -9,11 +9,6 @@ import Combine
 import Foundation
 
 class UserDetailsViewModel: ObservableObject {
-    enum LoadingState {
-        case initial(String)
-        case loaded
-        case error(AppError)
-    }
     
     let userLogin: String
     private let fetchUserDetailsUseCase: FetchUserDetailsUseCase
@@ -93,5 +88,27 @@ class UserDetailsViewModel: ObservableObject {
                 self.state = .loaded
             })
             .store(in: &cancellables)
+    }
+}
+
+
+extension UserDetailsViewModel {
+    enum LoadingState: Equatable {
+        case initial(String)
+        case loaded
+        case error(AppError)
+        
+        static func == (lhs: LoadingState, rhs: LoadingState) -> Bool {
+            switch (lhs, rhs) {
+            case (.initial(let lhsMessage), .initial(let rhsMessage)):
+                return lhsMessage == rhsMessage
+            case (.loaded, .loaded):
+                return true
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError.localizedDescription == rhsError.localizedDescription
+            default:
+                return false
+            }
+        }
     }
 }
