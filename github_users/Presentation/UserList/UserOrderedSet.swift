@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct UserOrderedSet<T: Hashable>: ExpressibleByArrayLiteral {
     private var array: [T]
     private var set: Set<T>
@@ -112,5 +110,11 @@ extension UserOrderedSet: RandomAccessCollection {
     
     subscript(position: Index) -> Element {
         return array[position]
+    }
+}
+
+extension UserOrderedSet: Equatable {
+    static func == (lhs: UserOrderedSet<T>, rhs: UserOrderedSet<T>) -> Bool {
+        return lhs.array == rhs.array
     }
 }

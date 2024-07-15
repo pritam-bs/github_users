@@ -9,13 +9,6 @@ import Combine
 import Foundation
 
 class UserListViewModel: ObservableObject {
-    enum LoadingState {
-        case initial(String)
-        case initialWithError(AppError)
-        case loaded
-        case loadingNext
-        case error(AppError)
-    }
     
     @Published var users: UserOrderedSet<UserEntity> = []
     @Published var state: LoadingState = .initial("Fetching users, please wait...")
@@ -72,5 +65,32 @@ class UserListViewModel: ObservableObject {
                 self.state = .loaded
             })
             .store(in: &cancellables)
+    }
+}
+
+extension UserListViewModel {
+    enum LoadingState: Equatable {
+        case initial(String)
+        case initialWithError(AppError)
+        case loaded
+        case loadingNext
+        case error(AppError)
+        
+        static func == (lhs: LoadingState, rhs: LoadingState) -> Bool {
+            switch (lhs, rhs) {
+            case (.initial(let lhsMessage), .initial(let rhsMessage)):
+                return lhsMessage == rhsMessage
+            case (.initialWithError(let lhsError), .initialWithError(let rhsError)):
+                return lhsError == rhsError
+            case (.loaded, .loaded):
+                return true
+            case (.loadingNext, .loadingNext):
+                return true
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError == rhsError
+            default:
+                return false
+            }
+        }
     }
 }
