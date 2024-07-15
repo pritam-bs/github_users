@@ -11,6 +11,7 @@ import SwiftUI
 struct UserAvatarView: View {
     var imageUrl: URL?
     @State private var loadImageFailed = false
+    @StateObject private var networkMonitor = NetworkMonitor()
     
     private var fallbackImage: some View {
         let randomizedColor: Color = [.blue, .green, .red, .orange, .purple].shuffled().first!
@@ -39,6 +40,18 @@ struct UserAvatarView: View {
         .aspectRatio(contentMode: .fill)
         .clipShape(Circle())
         .shadow(color: .primary.opacity(0.1), radius: 6, y: 4)
+        .onChange(
+            of: networkMonitor.isConnected,
+            initial: true
+        ) { oldValue, newValue  in
+            // Retry failed image download when network reconnected
+            guard loadImageFailed else {
+                return
+            }
+            if newValue && !oldValue {
+                loadImageFailed = false
+            }
+        }
     }
 }
 

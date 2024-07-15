@@ -60,7 +60,7 @@ struct UserListScreen: View {
     private func makeErrorView(error: AppError) -> some View {
         Group {
             switch error {
-            case .noInternet, .timeout:
+            case .noInternet, .timeout, .networkError:
                 VStack {
                     Text(error.localizedDescription)
                         .font(.body)
