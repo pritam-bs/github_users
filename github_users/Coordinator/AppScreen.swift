@@ -9,5 +9,5 @@ import Foundation
 
 enum AppScreen: Hashable {
     case userList
-    case userDetails(User)
+    case userDetails(UserEntity)
 }
