@@ -12,8 +12,9 @@ class Logger {
     private let logFileName = "app.log"
     private let maxLogLines = 1000
 
-    // Singleton class. Use Logger.shared
-    private init() {}
+    private init() {
+        // Singleton class. Use Logger.shared
+    }
 
     func log(_ message: String, level: LogLevel) {
         let timestamp = getCurrentTimestamp()
