@@ -10,6 +10,7 @@ import Foundation
 class NetworkErrorLogger {
     static let shared = NetworkErrorLogger()
     
+    // Singleton class. Use NetworkErrorLogger.shared
     private init() {}
     
     func log(_ error: NetworkError) {

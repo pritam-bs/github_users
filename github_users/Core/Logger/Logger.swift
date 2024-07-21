@@ -12,6 +12,7 @@ class Logger {
     private let logFileName = "app.log"
     private let maxLogLines = 1000
 
+    // Singleton class. Use Logger.shared
     private init() {}
 
     func log(_ message: String, level: LogLevel) {
