@@ -29,6 +29,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9C9C2E352C3C7C2D004DEFBD"
+               BuildableName = "github_usersTests.xctest"
+               BlueprintName = "github_usersTests"
+               ReferencedContainer = "container:github_users.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9C9C2E3F2C3C7C2D004DEFBD"
+               BuildableName = "github_usersUITests.xctest"
+               BlueprintName = "github_usersUITests"
+               ReferencedContainer = "container:github_users.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -50,6 +74,13 @@
             ReferencedContainer = "container:github_users.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "GITHUB_ACCESS_TOKEN"
+            value = "github_pat_fake_token_dsjfksjfksjflksfl122377823jskdfksjfksjfdfkjfksjdf_23232jkdkjdkajdakjdkdjakldjkljd_jwekjdkj"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
