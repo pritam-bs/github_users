@@ -36,6 +36,7 @@
 		9C0EE01D2C4564D3004522B7 /* MockUserDetailsCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EE01C2C4564D3004522B7 /* MockUserDetailsCacheUseCase.swift */; };
 		9C0EE01F2C4564E7004522B7 /* MockRepositoryCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EE01E2C4564E7004522B7 /* MockRepositoryCacheUseCase.swift */; };
 		9C0EE0212C45652F004522B7 /* UserDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EE0202C45652F004522B7 /* UserDetailsViewModelTests.swift */; };
+		9C5442AA2C5A374000ED258E /* FailedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5442A92C5A374000ED258E /* FailedTest.swift */; };
 		9C9C2E2A2C3C7C2A004DEFBD /* GithubUsersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C2E292C3C7C2A004DEFBD /* GithubUsersApp.swift */; };
 		9C9C2E2E2C3C7C2C004DEFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C2E2D2C3C7C2C004DEFBD /* Assets.xcassets */; };
 		9C9C2E312C3C7C2C004DEFBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C2E302C3C7C2C004DEFBD /* Preview Assets.xcassets */; };
@@ -142,6 +143,7 @@
 		9C356A902C5A278C008B905C /* TestPlanAll.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanAll.xctestplan; sourceTree = "<group>"; };
 		9C356A912C5A279C008B905C /* TestPlanUI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanUI.xctestplan; sourceTree = "<group>"; };
 		9C356A922C5A27AC008B905C /* TestPlanUnit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanUnit.xctestplan; sourceTree = "<group>"; };
+		9C5442A92C5A374000ED258E /* FailedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedTest.swift; sourceTree = "<group>"; };
 		9C9C2E262C3C7C2A004DEFBD /* github_users.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_users.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9C2E292C3C7C2A004DEFBD /* GithubUsersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersApp.swift; sourceTree = "<group>"; };
 		9C9C2E2D2C3C7C2C004DEFBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				9C0EDFEA2C452944004522B7 /* NetworkTest */,
 				9C0EDFDF2C451277004522B7 /* MockResponse */,
 				9C0EDFD42C45099C004522B7 /* MockNetwork */,
+				9C5442A92C5A374000ED258E /* FailedTest.swift */,
 			);
 			path = github_usersTests;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				9C0EDFFF2C4538CB004522B7 /* FetchUsersUseCaseImplTests.swift in Sources */,
 				9C0EE0192C456492004522B7 /* MockFetchUserDetailsUseCase.swift in Sources */,
 				9C0EDFFA2C453088004522B7 /* RepositoryCacheUseCaseImplTests.swift in Sources */,
+				9C5442AA2C5A374000ED258E /* FailedTest.swift in Sources */,
 				9C0EDFE72C451C10004522B7 /* ApiRouterTests.swift in Sources */,
 				9C0EDFF32C452D98004522B7 /* LoggerTest.swift in Sources */,
 				9C0EE00B2C454A1C004522B7 /* UserDetailsMapperTests.swift in Sources */,
