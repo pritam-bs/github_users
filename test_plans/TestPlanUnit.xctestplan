@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "649032B1-620D-4600-AF87-634D5BCAF5C8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:github_users.xcodeproj",
+        "identifier" : "9C9C2E352C3C7C2D004DEFBD",
+        "name" : "github_usersTests"
+      }
+    }
+  ],
+  "version" : 1
+}
