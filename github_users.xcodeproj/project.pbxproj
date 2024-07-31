@@ -139,6 +139,9 @@
 		9C0EE01C2C4564D3004522B7 /* MockUserDetailsCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailsCacheUseCase.swift; sourceTree = "<group>"; };
 		9C0EE01E2C4564E7004522B7 /* MockRepositoryCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryCacheUseCase.swift; sourceTree = "<group>"; };
 		9C0EE0202C45652F004522B7 /* UserDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		9C356A902C5A278C008B905C /* TestPlanAll.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanAll.xctestplan; sourceTree = "<group>"; };
+		9C356A912C5A279C008B905C /* TestPlanUI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanUI.xctestplan; sourceTree = "<group>"; };
+		9C356A922C5A27AC008B905C /* TestPlanUnit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlanUnit.xctestplan; sourceTree = "<group>"; };
 		9C9C2E262C3C7C2A004DEFBD /* github_users.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_users.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9C2E292C3C7C2A004DEFBD /* GithubUsersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersApp.swift; sourceTree = "<group>"; };
 		9C9C2E2D2C3C7C2C004DEFBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -329,9 +332,20 @@
 			path = MockUseCases;
 			sourceTree = "<group>";
 		};
+		9C356A8F2C5A2768008B905C /* test_plans */ = {
+			isa = PBXGroup;
+			children = (
+				9C356A902C5A278C008B905C /* TestPlanAll.xctestplan */,
+				9C356A912C5A279C008B905C /* TestPlanUI.xctestplan */,
+				9C356A922C5A27AC008B905C /* TestPlanUnit.xctestplan */,
+			);
+			path = test_plans;
+			sourceTree = "<group>";
+		};
 		9C9C2E1D2C3C7C2A004DEFBD = {
 			isa = PBXGroup;
 			children = (
+				9C356A8F2C5A2768008B905C /* test_plans */,
 				9C9C2E282C3C7C2A004DEFBD /* github_users */,
 				9C9C2E392C3C7C2D004DEFBD /* github_usersTests */,
 				9C9C2E432C3C7C2D004DEFBD /* github_usersUITests */,
